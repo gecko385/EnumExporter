@@ -54,8 +54,13 @@ use Carp;
 
 my $Ident = '[^\W_0-9]\w*';
 
+# this is more or less the importer sub from enum.pm 
+# all the bitmask stuff has gone and it creates
+# readonly vars in the caller codespace rather than local subs.
+# Also adds entrys into the callers's @EXPORT_OK
+
 sub export_ro {
-    @_ or return;       # Ignore 'use enum;'
+    @_ or return; 
     my $pkg     = caller() . '::';
     my $index   = 0;    # default start index
 
