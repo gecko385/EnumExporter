@@ -32,7 +32,7 @@ Differences are:
  ```
  package GUI::LabelTypes;
  use Readonly qw( Readonly );
- use Enum qw /export_ro/;
+ use EnumExporter qw /export_ro/;
  use base 'Exporter';
  our @EXPORT_OK;
 
